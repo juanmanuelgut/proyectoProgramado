@@ -1,0 +1,28 @@
+{
+  "name": "proyectoprogramado",
+  "version": "1.0.0",
+  "description": "Proyecto programado Juan Gutierrez",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx wdio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanmanuelgut/proyectoProgramado.git"
+  },
+  "author": "Juan Gutierrez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanmanuelgut/proyectoProgramado/issues"
+  },
+  "homepage": "https://github.com/juanmanuelgut/proyectoProgramado#readme",
+  "devDependencies": {
+    "@wdio/cli": "^7.7.4",
+    "@wdio/dot-reporter": "^7.7.3",
+    "@wdio/local-runner": "^7.7.4",
+    "@wdio/mocha-framework": "^7.7.4",
+    "@wdio/spec-reporter": "^7.7.3",
+    "chromedriver": "^91.0.1",
+    "wdio-chromedriver-service": "^7.1.0"
+  }
+}
