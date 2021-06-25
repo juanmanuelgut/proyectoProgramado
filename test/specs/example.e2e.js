@@ -1,7 +1,7 @@
 const LoginPage = require('../pageobjects/login.page');
 const SecurePage = require('../pageobjects/secure.page');
 
-//Comment
+//Comment changed to test git
 
 describe('My Login application', () => {
     it('should login with valid credentials', async () => {
