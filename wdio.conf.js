@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/*.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -97,7 +97,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://terapeutica.digital/#/',
+    baseUrl: 'https://terapeutica.digital/#',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -188,8 +188,18 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-    // before: function (capabilities, specs) {
-    // },
+    before: function (capabilities, specs) {
+        console.log('Run before');
+
+        // browser.validateOnPage({pageURL: dadasda})
+        // browser.validateOnPage({pageURL: dadasda, elementHook: asdasda})
+        browser.addCommand('validateOnPage', async function ({pageURL, elementHook}) {        
+            if (elementHook) {
+                await elementHook;
+            }
+            await expect(browser).toHaveUrlContaining(pageURL);
+        });
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
