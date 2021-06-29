@@ -21,7 +21,7 @@ describe('Pruebas Home page', () => {
         await browser.validateOnPage({pageURL: testData.homeURL, elementHook: HomePage.title})
     });
 
-    it('b. Hacer click en Física cambia el foco al campo de busqueda y el texto cambia', async() =>{
+    it('b. Hacer click en los botones Física, Lenguaje y Ocupacional cambia el foco al campo de busqueda y el texto cambia', async() =>{
         
         for (key in testButtons){
             await(await HomePage.btnHome(key)).click();
@@ -35,8 +35,7 @@ describe('Pruebas Home page', () => {
     it('c. Al ingresar el texto María y hacer click en Buscar redirecciona al la página de resultados y el resultado tiene el nombre María', async() =>{
         await HomePage.searchForText(testData.searchText);
         await expect(await ResultsPage.resultsCounter).toBeDisplayed();
-        await expect(await ResultsPage.firstResult(testData.searchText)).toBeExisting();
+        await expect(await ResultsPage.simpleResult(testData.searchText)).toBeExisting();
         
-    });    
+   });    
 });
-
